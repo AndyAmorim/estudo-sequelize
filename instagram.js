@@ -103,9 +103,16 @@ const{Op} = require('sequelize');
 // })
 
      // outra forma
-Usuario.findByPk(1,{include: ['posts']}).then(
-    usuario => {
-        console.log(usuario.toJSON());
+// Usuario.findByPk(1,{include: ['posts']}).then(
+//     usuario => {
+//         console.log(usuario.toJSON());
+//         sequelize.close();
+//     }
+// )    
+
+Post.findByPk(1,{include: ['comentario']}).then(
+    post => {
+        console.log(post.toJSON());
         sequelize.close();
     }
 )    
